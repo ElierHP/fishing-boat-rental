@@ -24,6 +24,11 @@ export default function GlobalStyles() {
           text-decoration: none;
           list-style: none;
         }
+        ,
+        h1 {
+          font-size: ${theme.fontSizes.heading}rem;
+          margin-top: 0;
+        }
       `}
     />
   );

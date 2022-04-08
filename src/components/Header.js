@@ -6,57 +6,59 @@ import Link from "next/link";
 
 export default function Header() {
   return (
-    <NavBar>
-      <Container>
-        <Nav>
-          {/* Logo */}
-          <Link href="/">
-            <Logo>F.B.R</Logo>
-          </Link>
+    <>
+      <NavBar>
+        <Container>
+          <Nav>
+            {/* Logo */}
+            <Link href="/">
+              <Logo>F.B.R</Logo>
+            </Link>
 
-          {/* Mobile */}
-          <IconButton>
-            <IoMenu fontSize={40} />
-          </IconButton>
+            {/* Mobile */}
+            <IconButton>
+              <IoMenu fontSize={40} />
+            </IconButton>
 
-          {/* Desktop */}
-          <Lists>
-            {/* Site Navigation */}
-            <List>
-              <li>
+            {/* Desktop */}
+            <Lists>
+              {/* Site Navigation */}
+              <List>
+                <li>
+                  <Link href="/">
+                    <Anchor>Home</Anchor>
+                  </Link>
+                </li>
+                <li>
+                  <Link href="/">
+                    <Anchor>Rentals</Anchor>
+                  </Link>
+                </li>
+                <li>
+                  <Link href="/">
+                    <Anchor>Locations</Anchor>
+                  </Link>
+                </li>
+                <li>
+                  <Link href="/">
+                    <Anchor>Contact</Anchor>
+                  </Link>
+                </li>
+              </List>
+              {/* User Links */}
+              <List>
                 <Link href="/">
-                  <Anchor>Home</Anchor>
+                  <Anchor>Sign In</Anchor>
                 </Link>
-              </li>
-              <li>
                 <Link href="/">
-                  <Anchor>Rentals</Anchor>
+                  <Anchor>Register</Anchor>
                 </Link>
-              </li>
-              <li>
-                <Link href="/">
-                  <Anchor>Locations</Anchor>
-                </Link>
-              </li>
-              <li>
-                <Link href="/">
-                  <Anchor>Contact</Anchor>
-                </Link>
-              </li>
-            </List>
-            {/* User Links */}
-            <List>
-              <Link href="/">
-                <Anchor>Sign In</Anchor>
-              </Link>
-              <Link href="/">
-                <Anchor>Register</Anchor>
-              </Link>
-            </List>
-          </Lists>
-        </Nav>
-      </Container>
-    </NavBar>
+              </List>
+            </Lists>
+          </Nav>
+        </Container>
+      </NavBar>
+    </>
   );
 }
 
