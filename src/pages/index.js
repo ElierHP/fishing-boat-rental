@@ -1,4 +1,5 @@
 import Head from "next/head";
+import FishingBoats from "../components/FishingBoats";
 import Hero from "../components/Hero";
 import Layout from "../components/Layout";
 
@@ -13,6 +14,7 @@ export default function Home() {
       </Head>
       {/* Content */}
       <Hero />
+      <FishingBoats />
     </Layout>
   );
 }
