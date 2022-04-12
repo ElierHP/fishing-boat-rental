@@ -4,6 +4,7 @@ import styled from "@emotion/styled";
 import theme from "../styles/theme";
 import Image from "next/image";
 import Button from "./Button";
+import { GiCaptainHatProfile } from "react-icons/gi";
 
 const products = [
   {
@@ -64,10 +65,13 @@ export default function FishingBoats() {
                 />
                 <HeadingContainer>
                   <Heading>{product.title}</Heading>
-                  <SubHeading>{product.subtitle}</SubHeading>
+                  <SubHeadingContainer>
+                    <GiCaptainHatProfile />
+                    <SubHeading>{product.subtitle}</SubHeading>
+                  </SubHeadingContainer>
                 </HeadingContainer>
               </ImageContainer>
-              <p>{product.desc}</p>
+              <Desc>{product.desc}</Desc>
               <BtnContainer>
                 <Button border={true}>LEARN MORE</Button>
                 <Button>BOOK NOW</Button>
@@ -82,14 +86,14 @@ export default function FishingBoats() {
 
 // Styles
 const Section = styled.section`
-  padding: ${theme.space[3]}rem 0;
+  padding: ${theme.space[4]}rem 0;
 `;
 
 const CardContainer = styled.div`
   display: grid;
   grid-template-columns: 1fr;
   grid-gap: 5rem;
-  padding: 4rem 0;
+  padding: 6rem 0;
   ${theme.mq()[1]} {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -98,7 +102,7 @@ const CardContainer = styled.div`
   ${theme.mq()[2]} {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
-    grid-gap: 5rem;
+    grid-gap: 8rem;
   }
 `;
 
@@ -110,6 +114,10 @@ const Card = styled.div`
 const ImageContainer = styled.div`
   position: relative;
   width: 100%;
+`;
+
+const Desc = styled.p`
+  padding: 1rem 0;
 `;
 
 const HeadingContainer = styled.div`
@@ -129,6 +137,12 @@ const Heading = styled.h3`
   color: inherit;
 `;
 
+const SubHeadingContainer = styled.div`
+  display: flex;
+  gap: 0.5rem;
+  color: ${theme.colors.light};
+`;
+
 const SubHeading = styled.p`
   margin: 0;
   color: inherit;
@@ -138,5 +152,11 @@ const SubHeading = styled.p`
 const BtnContainer = styled.div`
   display: flex;
   flex-direction: column;
-  gap: 1rem;
+  gap: 1.5rem;
+  padding: 1rem 1rem;
+  ${theme.mq()[2]} {
+    justify-content: space-between;
+    flex-direction: row;
+    padding: 0;
+  }
 `;

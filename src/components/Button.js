@@ -15,9 +15,10 @@ export default function Button({ children, border }) {
     text-align: center;
     cursor: pointer;
     transition: all 0.3s ease-in-out;
+    width: 100%;
     &:hover {
-      background-color: ${theme.colors.dark};
-      border: 4px solid ${theme.colors.dark};
+      background-color: ${theme.colors.btnHover};
+      border: 4px solid ${theme.colors.btnHover};
       color: ${theme.colors.light};
     }
   `;

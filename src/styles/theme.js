@@ -29,7 +29,8 @@ const theme = {
     primary: "#48ACE3",
     dark: "black",
     light: "white",
-    hover: "#9EF2C5",
+    hover: "#FFD685",
+    btnHover: "#E7AD56",
   },
   transition: {
     primary: "all 0.3s ease-in-out",

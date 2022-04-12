@@ -7,7 +7,13 @@ export default function Hero() {
   return (
     <Section>
       <Content>
-        <Logo>F.B.R</Logo>
+        <Image
+          alt="logo"
+          src="/logo.png"
+          height={150}
+          width={150}
+          quality={100}
+        />
         <h1>Boat Rentals in Miami, FL!</h1>
         <BtnContainer>
           <Button>SEE ALL RENTALS & TOURS</Button>
@@ -20,7 +26,7 @@ export default function Hero() {
           layout="fill"
           objectFit="cover"
           quality={100}
-          priority={false}
+          priority={true}
         />
       </BackgroundImage>
     </Section>
@@ -42,14 +48,12 @@ const Section = styled.section`
 `;
 
 const Content = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 2rem;
   text-align: center;
-`;
-
-const Logo = styled.div`
-  font-size: ${theme.fontSizes.mobileHeading}rem;
-  font-weight: ${theme.fontWeights.bold};
-  z-index: 10;
-  margin-bottom: 1rem;
 `;
 
 const BackgroundImage = styled.div`
@@ -57,5 +61,5 @@ const BackgroundImage = styled.div`
 `;
 
 const BtnContainer = styled.div`
-  padding: 0 1rem;
+  padding-top: 1rem;
 `;
