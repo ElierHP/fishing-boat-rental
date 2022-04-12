@@ -1,12 +1,12 @@
 import styled from "@emotion/styled";
 import theme from "../styles/theme";
 
-export default function SectionTitle({ children }) {
+export default function SectionTitle({ children, color = theme.colors.dark }) {
   return (
-    <>
-      <h2>{children}</h2>
+    <Title>
+      <h2 style={{ color: color, marginTop: 0 }}>{children}</h2>
       <Line></Line>
-    </>
+    </Title>
   );
 }
 
@@ -15,4 +15,9 @@ const Line = styled.div`
   height: 5px;
   width: 70px;
   background: ${theme.colors.primary};
+`;
+
+const Title = styled.div`
+  padding-bottom: 4rem;
+  color: ${theme.colors.light};
 `;

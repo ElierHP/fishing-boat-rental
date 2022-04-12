@@ -86,14 +86,13 @@ export default function FishingBoats() {
 
 // Styles
 const Section = styled.section`
-  padding: ${theme.space[4]}rem 0;
+  padding: ${theme.space[6]}rem 0;
 `;
 
 const CardContainer = styled.div`
   display: grid;
   grid-template-columns: 1fr;
   grid-gap: 5rem;
-  padding: 6rem 0;
   ${theme.mq()[1]} {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -109,6 +108,7 @@ const CardContainer = styled.div`
 const Card = styled.div`
   display: flex;
   flex-direction: column;
+  padding-top: 2rem;
 `;
 
 const ImageContainer = styled.div`
