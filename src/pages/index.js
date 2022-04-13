@@ -3,6 +3,7 @@ import About from "../components/About";
 import FishingBoats from "../components/FishingBoats";
 import Hero from "../components/Hero";
 import Layout from "../components/Layout";
+import Reviews from "../components/Reviews";
 
 export default function Home() {
   return (
@@ -17,6 +18,7 @@ export default function Home() {
       <Hero />
       <FishingBoats />
       <About />
+      <Reviews />
     </Layout>
   );
 }

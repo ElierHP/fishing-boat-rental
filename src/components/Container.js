@@ -8,5 +8,5 @@ export default function Container({ children }) {
 const Box = styled.div`
   max-width: 1200px;
   margin: auto;
-  padding: 0 1.5rem;
+  padding: 0 2rem;
 `;

@@ -52,13 +52,19 @@ export default function About() {
 // Styles
 const ContentContainer = styled.div`
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 1fr;
   grid-gap: 10rem;
+  ${theme.mq()[2]} {
+    grid-template-columns: 1fr 1fr;
+  }
 `;
 
 const Content = styled.div`
-  width: 60ch;
+  width: 100%;
   z-index: 2;
+  ${theme.mq()[2]} {
+    max-width: 60ch;
+  }
 `;
 
 const Section = styled.section`
@@ -80,14 +86,20 @@ const Filter = styled.div`
 `;
 
 const BtnContainer = styled.div`
-  max-width: 300px;
+  width: 100%;
   padding-top: 5rem;
+  ${theme.mq()[0]} {
+    max-width: 300px;
+  }
 `;
 
 const ImageContainer = styled.div`
   width: 100%;
   height: 100%;
-  display: grid;
+  display: none;
+  ${theme.mq()[2]} {
+    display: grid;
+  }
 `;
 
 const Paragraph = styled.p`
