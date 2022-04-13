@@ -55,7 +55,7 @@ export default function Reviews() {
 
 // Styles
 const Section = styled.section`
-  padding: ${theme.space[6]}rem 0;
+  padding: ${theme.space[8]}rem 0;
 `;
 
 const CardContainer = styled.div`
@@ -64,6 +64,9 @@ const CardContainer = styled.div`
   grid-gap: 6rem;
   margin-top: 2rem;
   ${theme.mq()[1]} {
+    grid-template-columns: 1fr 1fr;
+  }
+  ${theme.mq()[2]} {
     grid-template-columns: 1fr 1fr 1fr;
   }
 `;

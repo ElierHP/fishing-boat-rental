@@ -87,7 +87,7 @@ const Filter = styled.div`
 
 const BtnContainer = styled.div`
   width: 100%;
-  padding-top: 5rem;
+  padding-top: 3rem;
   ${theme.mq()[0]} {
     max-width: 300px;
   }
