@@ -6,6 +6,7 @@ import { AiFillStar } from "react-icons/ai";
 
 const reviews = [
   {
+    id: 1,
     title: "Great Captain!",
     desc: "Our boat options are great for exploring the waters around Miami. Be the captain and drive it yourself. The waters around Miami. Be the captain.",
     rating: [1, 2, 3, 4, 5],
@@ -13,6 +14,7 @@ const reviews = [
     key: 10,
   },
   {
+    id: 2,
     title: "Fantastic Trip",
     desc: "Our boat options are great for exploring the waters around Miami. Be the captain and drive it yourself. The waters around Miami. Be the captain.",
     rating: [1, 2, 3, 4, 5],
@@ -20,6 +22,7 @@ const reviews = [
     key: 11,
   },
   {
+    id: 3,
     title: "Amazing Experience!",
     desc: "Our boat options are great for exploring the waters around Miami. Be the captain and drive it yourself. The waters around Miami. Be the captain.",
     rating: [1, 2, 3, 4],
@@ -28,7 +31,7 @@ const reviews = [
   },
 ];
 
-console.log(reviews.length);
+const reviewDisplay = [{ id: 10, reviewIds: [1, 2, 3], selected: true }];
 export default function Reviews() {
   return (
     <Section>
@@ -39,15 +42,23 @@ export default function Reviews() {
         <CardContainer>
           {reviews.map((review) => (
             <Card key={review.key}>
-              <h3>{review.title}</h3>
+              <CardTitle>{review.title}</CardTitle>
               {review.rating.map(() => (
-                <AiFillStar color={theme.colors.primary} />
+                <AiFillStar color={theme.colors.primary} size={25} />
               ))}
               <p>{review.desc}</p>
-              <p>-{review.author}</p>
+              <Author>-{review.author}</Author>
             </Card>
           ))}
         </CardContainer>
+        <Selector>
+          {reviewDisplay.map((review) => {
+            if (review.selected === true) {
+              return <SelectedRectangle key={review.key} />;
+            }
+            return <Rectangle key={review.key} />;
+          })}
+        </Selector>
       </Container>
     </Section>
   );
@@ -74,4 +85,33 @@ const CardContainer = styled.div`
 const Card = styled.div`
   padding: 2rem 3.5rem;
   box-shadow: -5px 5px 15px rgba(0, 0, 0, 0.2);
+`;
+
+const CardTitle = styled.h3`
+  margin-bottom: 1rem;
+`;
+
+const Author = styled.p`
+  text-align: right;
+  margin: 4rem 0 0 0;
+`;
+
+const Selector = styled.div`
+  display: flex;
+  gap: 2rem;
+  justify-content: center;
+  margin-top: 5rem;
+`;
+const Rectangle = styled.div`
+  width: 40px;
+  height: 5px;
+  background: #dddddd;
+  display: inline-block;
+`;
+
+const SelectedRectangle = styled.div`
+  width: 40px;
+  height: 5px;
+  background: ${theme.colors.primary};
+  display: inline-block;
 `;
