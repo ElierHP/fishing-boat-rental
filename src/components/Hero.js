@@ -7,18 +7,12 @@ export default function Hero() {
   return (
     <Section>
       <Content>
-        <Image
-          alt="logo"
-          src="/logo.png"
-          height={150}
-          width={150}
-          quality={100}
-        />
         <h1>Boat Rentals in Miami, FL!</h1>
         <BtnContainer>
           <Button>SEE ALL RENTALS & TOURS</Button>
         </BtnContainer>
       </Content>
+      <Filter />
       <BackgroundImage>
         <Image
           alt="hero image"
@@ -54,6 +48,16 @@ const Content = styled.div`
   flex-direction: column;
   gap: 2rem;
   text-align: center;
+  padding: 0 2rem;
+  z-index: 1;
+`;
+
+const Filter = styled.div`
+  background: rgba(48, 82, 114, 0.1);
+  position: absolute;
+  top: 0;
+  height: 100%;
+  width: 100%;
 `;
 
 const BackgroundImage = styled.div`

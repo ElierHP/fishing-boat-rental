@@ -7,7 +7,7 @@ const theme = {
     small: 1.4,
     medium: 1.6,
     large: 2.1,
-    mobileHeading: 3,
+    mobileHeading: 4,
     heading: 3.6,
     largeHeading: 6,
   },

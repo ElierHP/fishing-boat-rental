@@ -34,10 +34,10 @@ export default function About() {
           <ImageContainer>
             <Image
               alt="boat image"
-              src="/product-1.jpg"
+              src="/about-img.jpg"
               layout="responsive"
-              width={500}
-              height={500}
+              width={100}
+              height={100}
               objectFit="contain"
               quality={100}
               priority={false}
@@ -69,7 +69,7 @@ const Content = styled.div`
 
 const Section = styled.section`
   padding: ${theme.space[6]}rem 0;
-  background: url("/product-1.jpg");
+  background: url("/about-background.jpg");
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;

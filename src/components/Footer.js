@@ -61,8 +61,8 @@ export default function Footer() {
 
 // Styles
 const Section = styled.div`
-  background: url("/footer-img.jpg");
-  background-position: center;
+  background: url("/about-background.jpg");
+  background-position: bottom;
   background-repeat: no-repeat;
   background-size: cover;
   position: relative;
