@@ -5,43 +5,44 @@ import theme from "../styles/theme";
 import Image from "next/image";
 import Button from "./Button";
 import { GiCaptainHatProfile } from "react-icons/gi";
+import { v4 as uuidv4 } from "uuid";
 
 const products = [
   {
     title: '21" Hurricane Fishing Boat  ',
     subtitle: "Captain Included",
     desc: "Our boat options are great for exploring the waters around Miami. Be the captain and drive it yourself.",
-    key: 0,
+    key: uuidv4(),
   },
   {
     title: '21" Hurricane Fishing Boat  ',
     subtitle: "Captain Included",
     desc: "Our boat options are great for exploring the waters around Miami. Be the captain and drive it yourself.",
-    key: 1,
+    key: uuidv4(),
   },
   {
     title: '21" Hurricane Fishing Boat  ',
     subtitle: "Captain Included",
     desc: "Our boat options are great for exploring the waters around Miami. Be the captain and drive it yourself.",
-    key: 2,
+    key: uuidv4(),
   },
   {
     title: '21" Hurricane Fishing Boat  ',
     subtitle: "Captain Included",
     desc: "Our boat options are great for exploring the waters around Miami. Be the captain and drive it yourself.",
-    key: 3,
+    key: uuidv4(),
   },
   {
     title: '21" Hurricane Fishing Boat  ',
     subtitle: "Captain Included",
     desc: "Our boat options are great for exploring the waters around Miami. Be the captain and drive it yourself.",
-    key: 4,
+    key: uuidv4(),
   },
   {
     title: '21" Hurricane Fishing Boat  ',
     subtitle: "Captain Included",
     desc: "Our boat options are great for exploring the waters around Miami. Be the captain and drive it yourself.",
-    key: 5,
+    key: uuidv4(),
   },
 ];
 

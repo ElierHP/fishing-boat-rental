@@ -3,6 +3,7 @@ import SectionTitle from "./SectionTitle";
 import styled from "@emotion/styled";
 import theme from "../styles/theme";
 import { AiFillStar } from "react-icons/ai";
+import { v4 as uuidv4 } from "uuid";
 
 const reviews = [
   {
@@ -11,7 +12,7 @@ const reviews = [
     desc: "Our boat options are great for exploring the waters around Miami. Be the captain and drive it yourself. The waters around Miami. Be the captain.",
     rating: [1, 2, 3, 4, 5],
     author: "John Steward",
-    key: 10,
+    key: uuidv4(),
   },
   {
     id: 2,
@@ -19,7 +20,7 @@ const reviews = [
     desc: "Our boat options are great for exploring the waters around Miami. Be the captain and drive it yourself. The waters around Miami. Be the captain.",
     rating: [1, 2, 3, 4, 5],
     author: "John Steward",
-    key: 11,
+    key: uuidv4(),
   },
   {
     id: 3,
@@ -27,11 +28,13 @@ const reviews = [
     desc: "Our boat options are great for exploring the waters around Miami. Be the captain and drive it yourself. The waters around Miami. Be the captain.",
     rating: [1, 2, 3, 4],
     author: "John Steward",
-    key: 12,
+    key: uuidv4(),
   },
 ];
 
-const reviewDisplay = [{ id: 10, reviewIds: [1, 2, 3], selected: true }];
+const reviewDisplay = [
+  { id: 10, reviewIds: [1, 2, 3], selected: true, key: uuidv4() },
+];
 export default function Reviews() {
   return (
     <Section>
@@ -44,7 +47,11 @@ export default function Reviews() {
             <Card key={review.key}>
               <CardTitle>{review.title}</CardTitle>
               {review.rating.map(() => (
-                <AiFillStar color={theme.colors.primary} size={25} />
+                <AiFillStar
+                  color={theme.colors.primary}
+                  size={25}
+                  key={uuidv4()}
+                />
               ))}
               <p>{review.desc}</p>
               <Author>-{review.author}</Author>
