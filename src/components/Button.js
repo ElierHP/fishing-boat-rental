@@ -2,7 +2,7 @@ import styled from "@emotion/styled";
 import Link from "next/link";
 import theme from "../styles/theme";
 
-export default function Button({ children, border }) {
+export default function Button({ children, border, link = "/" }) {
   // Styles
 
   const Btn = styled.a`
@@ -23,7 +23,7 @@ export default function Button({ children, border }) {
     }
   `;
   return (
-    <Link href="/">
+    <Link href={link}>
       <Btn>{children}</Btn>
     </Link>
   );

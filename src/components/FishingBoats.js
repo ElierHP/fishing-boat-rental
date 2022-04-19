@@ -13,36 +13,42 @@ const products = [
     subtitle: "Captain Included",
     desc: "Our boat options are great for exploring the waters around Miami. Be the captain and drive it yourself.",
     key: uuidv4(),
+    url: "/product/1",
   },
   {
     title: '21" Hurricane Fishing Boat  ',
     subtitle: "Captain Included",
     desc: "Our boat options are great for exploring the waters around Miami. Be the captain and drive it yourself.",
     key: uuidv4(),
+    url: "/product/2",
   },
   {
     title: '21" Hurricane Fishing Boat  ',
     subtitle: "Captain Included",
     desc: "Our boat options are great for exploring the waters around Miami. Be the captain and drive it yourself.",
     key: uuidv4(),
+    url: "/product/3",
   },
   {
     title: '21" Hurricane Fishing Boat  ',
     subtitle: "Captain Included",
     desc: "Our boat options are great for exploring the waters around Miami. Be the captain and drive it yourself.",
     key: uuidv4(),
+    url: "/product/4",
   },
   {
     title: '21" Hurricane Fishing Boat  ',
     subtitle: "Captain Included",
     desc: "Our boat options are great for exploring the waters around Miami. Be the captain and drive it yourself.",
     key: uuidv4(),
+    url: "/product/4",
   },
   {
     title: '21" Hurricane Fishing Boat  ',
     subtitle: "Captain Included",
     desc: "Our boat options are great for exploring the waters around Miami. Be the captain and drive it yourself.",
     key: uuidv4(),
+    url: "/product/4",
   },
 ];
 
@@ -74,7 +80,9 @@ export default function FishingBoats() {
               </ImageContainer>
               <Desc>{product.desc}</Desc>
               <BtnContainer>
-                <Button border={true}>LEARN MORE</Button>
+                <Button border={true} link={product.url}>
+                  LEARN MORE
+                </Button>
                 <Button>BOOK NOW</Button>
               </BtnContainer>
             </Card>
