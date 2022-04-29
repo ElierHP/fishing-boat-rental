@@ -6,60 +6,40 @@ import Image from "next/image";
 import Button from "./Button";
 import { GiCaptainHatProfile } from "react-icons/gi";
 import { v4 as uuidv4 } from "uuid";
-
-const products = [
-  {
-    title: '21" Hurricane Fishing Boat  ',
-    subtitle: "Captain Included",
-    desc: "Our boat options are great for exploring the waters around Miami. Be the captain and drive it yourself.",
-    key: uuidv4(),
-    url: "/product/1",
-  },
-  {
-    title: '21" Hurricane Fishing Boat  ',
-    subtitle: "Captain Included",
-    desc: "Our boat options are great for exploring the waters around Miami. Be the captain and drive it yourself.",
-    key: uuidv4(),
-    url: "/product/2",
-  },
-  {
-    title: '21" Hurricane Fishing Boat  ',
-    subtitle: "Captain Included",
-    desc: "Our boat options are great for exploring the waters around Miami. Be the captain and drive it yourself.",
-    key: uuidv4(),
-    url: "/product/3",
-  },
-  {
-    title: '21" Hurricane Fishing Boat  ',
-    subtitle: "Captain Included",
-    desc: "Our boat options are great for exploring the waters around Miami. Be the captain and drive it yourself.",
-    key: uuidv4(),
-    url: "/product/4",
-  },
-  {
-    title: '21" Hurricane Fishing Boat  ',
-    subtitle: "Captain Included",
-    desc: "Our boat options are great for exploring the waters around Miami. Be the captain and drive it yourself.",
-    key: uuidv4(),
-    url: "/product/4",
-  },
-  {
-    title: '21" Hurricane Fishing Boat  ',
-    subtitle: "Captain Included",
-    desc: "Our boat options are great for exploring the waters around Miami. Be the captain and drive it yourself.",
-    key: uuidv4(),
-    url: "/product/4",
-  },
-];
+import { useQuery } from "react-query";
+import axios from "axios";
 
 export default function FishingBoats() {
+  const getProducts = async () => {
+    const products = await axios.get("http://localhost:5000/products/all");
+    return products;
+  };
+  // Queries
+  const { data: products, isLoading, isError } = useQuery("todos", getProducts);
+
+  if (isLoading) {
+    return (
+      <Container>
+        <h2>Loading...</h2>
+      </Container>
+    );
+  }
+
+  if (isError) {
+    return (
+      <Container>
+        <h2>Failed to load resource. There was a server error.</h2>
+      </Container>
+    );
+  }
   return (
     <Section>
       <Container>
         <SectionTitle>Top Miami Fishing Boats</SectionTitle>
         <CardContainer>
-          {products.map((product) => (
-            <Card key={product.key}>
+          {/* Map over product data & display */}
+          {products.data.map((product) => (
+            <Card key={uuidv4()}>
               <ImageContainer>
                 <Image
                   alt="boat image"
