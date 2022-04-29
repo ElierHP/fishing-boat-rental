@@ -1,9 +1,12 @@
+import Container from "../../../components/Container";
+
 function index({ product }) {
   return (
-    <div key={product.key}>
-      <h1>Title: {product.name}</h1>
-      <p>Price: {product.price}</p>
-    </div>
+    <Container>
+      <h2>{product.title}</h2>
+      <p>{product.subtitle}</p>
+      <p>{product.desc}</p>
+    </Container>
   );
 }
 
@@ -11,14 +14,14 @@ export default index;
 
 // This function gets called at build time
 export async function getStaticProps(context) {
-  // Call an external API endpoint to get posts
+  // Call an external API endpoint to get products
   const res = await fetch(
     `http://localhost:5000/products/${context.params.id}`
   );
   const product = await res.json();
 
-  // By returning { props: { posts } }, the Blog component
-  // will receive `posts` as a prop at build time
+  // By returning { props: { product } }, the index component
+  // will receive `product` as a prop at build time
   return {
     props: {
       product,
@@ -29,12 +32,13 @@ export async function getStaticProps(context) {
 // This function gets called at build time
 export async function getStaticPaths() {
   // Call an external API endpoint to get posts
-  const res = await fetch("http://localhost:5000/products");
-  const posts = await res.json();
+
+  const res = await fetch("http://localhost:5000/products/all");
+  const products = await res.json();
 
   // Get the paths we want to pre-render based on posts
-  const paths = posts.map((post) => ({
-    params: { id: post.id.toString() },
+  const paths = products.map((product) => ({
+    params: { id: product._id.toString() },
   }));
 
   // We'll pre-render only these paths at build time.

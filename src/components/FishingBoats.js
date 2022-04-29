@@ -60,7 +60,7 @@ export default function FishingBoats() {
               </ImageContainer>
               <Desc>{product.desc}</Desc>
               <BtnContainer>
-                <Button border={true} link={product.url}>
+                <Button border={true} link={`product/${product._id}`}>
                   LEARN MORE
                 </Button>
                 <Button>BOOK NOW</Button>
