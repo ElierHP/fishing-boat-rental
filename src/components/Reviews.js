@@ -32,9 +32,6 @@ const reviews = [
   },
 ];
 
-const reviewDisplay = [
-  { id: 10, reviewIds: [1, 2, 3], selected: true, key: uuidv4() },
-];
 export default function Reviews() {
   return (
     <Section>
@@ -59,12 +56,9 @@ export default function Reviews() {
           ))}
         </CardContainer>
         <Selector>
-          {reviewDisplay.map((review) => {
-            if (review.selected === true) {
-              return <SelectedRectangle key={review.key} />;
-            }
-            return <Rectangle key={review.key} />;
-          })}
+          {reviews.map((review) => (
+            <Rectangle key={review.key} />
+          ))}
         </Selector>
       </Container>
     </Section>
@@ -113,12 +107,5 @@ const Rectangle = styled.div`
   width: 40px;
   height: 5px;
   background: #dddddd;
-  display: inline-block;
-`;
-
-const SelectedRectangle = styled.div`
-  width: 40px;
-  height: 5px;
-  background: ${theme.colors.primary};
   display: inline-block;
 `;

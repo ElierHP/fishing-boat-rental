@@ -40,25 +40,27 @@ export default function FishingBoats() {
           {/* Map over product data & display */}
           {products.data.map((product) => (
             <Card key={uuidv4()}>
-              <ImageContainer>
-                <Image
-                  alt="boat image"
-                  src="/product-1.jpg"
-                  layout="responsive"
-                  height={800}
-                  width={1000}
-                  quality={100}
-                  priority={false}
-                />
-                <HeadingContainer>
-                  <Heading>{product.title}</Heading>
-                  <SubHeadingContainer>
-                    <GiCaptainHatProfile />
-                    <SubHeading>{product.subtitle}</SubHeading>
-                  </SubHeadingContainer>
-                </HeadingContainer>
-              </ImageContainer>
-              <Desc>{product.desc}</Desc>
+              <div>
+                <ImageContainer>
+                  <Image
+                    alt="boat image"
+                    src="/product-1.jpg"
+                    layout="responsive"
+                    height={800}
+                    width={1000}
+                    quality={100}
+                    priority={false}
+                  />
+                  <HeadingContainer>
+                    <Heading>{product.title}</Heading>
+                    <SubHeadingContainer>
+                      <GiCaptainHatProfile />
+                      <SubHeading>{product.subtitle}</SubHeading>
+                    </SubHeadingContainer>
+                  </HeadingContainer>
+                </ImageContainer>
+                <Desc>{product.desc}</Desc>
+              </div>
               <BtnContainer>
                 <Button border={true} link={`product/${product._id}`}>
                   LEARN MORE
@@ -97,6 +99,7 @@ const CardContainer = styled.div`
 const Card = styled.div`
   display: flex;
   flex-direction: column;
+  justify-content: space-between;
   padding-top: 2rem;
 `;
 

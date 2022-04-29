@@ -23,9 +23,7 @@ export default function About() {
               captain and drive it yourself.Our boat options are great for
               exploring the waters around Miami. Be the captain and drive it
               yourself.Our boat options are great for exploring the waters
-              around Miami. Be the captain and drive it yourself.Our boat
-              options are great for exploring the waters around Miami. Be the
-              captain and drive it yourself.
+              around Miami. Be the captain and drive it yourself.
             </Paragraph>
             <BtnContainer>
               <Button>SEE ALL BOATS AND RENTAL</Button>

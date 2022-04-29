@@ -1,12 +1,17 @@
 import Container from "../../../components/Container";
+import Layout from "../../../components/Layout";
 
 function index({ product }) {
   return (
-    <Container>
-      <h2>{product.title}</h2>
-      <p>{product.subtitle}</p>
-      <p>{product.desc}</p>
-    </Container>
+    <Layout>
+      <Container>
+        <div style={{ height: "60vh", paddingTop: "5rem" }}>
+          <h2>{product.title}</h2>
+          <p>{product.subtitle}</p>
+          <p>{product.desc}</p>
+        </div>
+      </Container>
+    </Layout>
   );
 }
 

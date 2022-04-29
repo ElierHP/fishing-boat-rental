@@ -5,7 +5,7 @@ const theme = {
   },
   fontSizes: {
     small: 1.4,
-    medium: 1.6,
+    medium: 1.8,
     large: 2.1,
     mobileHeading: 4,
     heading: 3.6,

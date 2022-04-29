@@ -64,7 +64,8 @@ export default function Header() {
 
 // Styles
 const NavBar = styled.header`
-  background: ${theme.colors.primary};
+  background: ${theme.colors.light};
+  border-bottom: 0.4rem solid ${theme.colors.dark};
 `;
 
 const Nav = styled.nav`
@@ -72,16 +73,15 @@ const Nav = styled.nav`
   justify-content: space-between;
   align-items: center;
   padding: 1rem 0;
-  color: ${theme.colors.light};
 `;
 
 const Logo = styled.a`
-  font-size: ${theme.fontSizes.large}rem;
+  font-size: 3.2rem;
   font-weight: ${theme.fontWeights.bold};
-  color: ${theme.colors.light};
+  color: ${theme.colors.dark};
   cursor: pointer;
   &:hover {
-    color: ${theme.colors.hover};
+    color: ${theme.colors.primary};
   }
 `;
 
@@ -97,6 +97,10 @@ const Lists = styled.div`
   display: none;
   ${theme.mq()[1]} {
     display: flex;
+    gap: 4rem;
+  }
+  ${theme.mq()[2]} {
+    display: flex;
     gap: 12rem;
   }
 `;
@@ -107,14 +111,15 @@ const List = styled.ul`
   padding: 0;
   ${theme.mq()[1]} {
     display: flex;
-    gap: 1.5rem;
+    gap: 3rem;
   }
 `;
 
 const Anchor = styled.a`
-  color: ${theme.colors.light};
+  color: ${theme.colors.dark};
   cursor: pointer;
+  font-size: 2rem;
   &:hover {
-    color: ${theme.colors.hover};
+    color: ${theme.colors.primary};
   }
 `;
